@@ -1,0 +1,13 @@
+# carpeta de entorno virtual
+venv/
+
+# Archivos de compilación de Python
+*.pyc
+__pycache__/
+
+# Archivos de configuración de tu editor/IDE
+.vscode/
+.idea/
+
+# Archivos de configuración de Django
+*.env
