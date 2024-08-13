@@ -10,7 +10,8 @@
 <body>
     <section class="contenedor-principal">
         <h2>Formulario de Registro</h2>
-        <form class="contenedor-formulario">
+        <form class="contenedor-formulario" method="POST">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="nombres">Nombres:</label>
                 <input type="text" id="nombres" name="nombres" pattern="[A-Za-z\s]+" title="No pongas caracteres raros" required>

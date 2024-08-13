@@ -13,7 +13,8 @@
             <img src="{% static 'images/diente.png' %}" alt="Icono">
         </div>
         <h1>Iniciar Sesión</h1>
-        <form class="contenedor-formulario">
+        <form class="contenedor-formulario" method="POST">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="correo">Correo Electrónico *</label>
                 <input type="email" id="correo" name="correo" placeholder="Introduce tu correo" required>
