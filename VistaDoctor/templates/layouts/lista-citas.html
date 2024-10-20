@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'listado-citas/styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="message" style="color: red; margin-top: 10px;"></div>
+    <div class="container">
+        <div class="left-section">
+            <h1>Listado de Pacientes y Citas</h1>
+            <table id="citas-table">
+                <thead>
+                    <tr>
+                        <th>N° Cita</th>
+                        <th>Paciente</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cita in citas %}
+                    <tr>
+                        <td>{{cita.id}}</td>
+                        <td>{{cita.paciente.first_name}} {{cita.paciente.last_name}}</td>
+                        <td>{{cita.horario.fecha|date:"Y-m-d"}}</td>
+                        <td>{{cita.horario.hora_inicio|time:"H:i"}}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="right-section">
+            <h2>Buscar Paciente</h2>
+            <input type="text" id="search-input" placeholder="Introduzca el nombre del paciente..." aria-label="Buscar paciente">
+        </div>
+    </div>
+
+    <script src="{% static 'listado-citas/app.js' %}"></script>
+    
+</body>
+</html>
