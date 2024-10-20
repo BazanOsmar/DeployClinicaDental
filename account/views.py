@@ -53,7 +53,7 @@ def SignUp(request):
             # Guardar y autenticar al nuevo usuario
             newUser.save()
             login(request, newUser)
-            print("Se guardó de forma correcta")
+            print("Se guardó de forma correctad")
 
             # Redirigir a la página de inicio
             return redirect('Index')
